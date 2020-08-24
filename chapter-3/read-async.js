@@ -1,11 +1,11 @@
 const fs = require("fs");
 const readAsync = (file) => {
-  console.log("fazendo leitura assíncrona");
+  console.log("Fazendo leitura assincrona");
   const begin = new Date().getTime();
-  fs.readFile(file);
+  fs.readFile(file, (err, data) => data);
   const end = new Date().getTime();
 
-  console.log(`Bloqueio assíncrono: ${end - begin}ms`);
+  console.log(`Bloqueio assincrono: ${end - begin}ms`);
 };
 
 module.exports = readAsync;
